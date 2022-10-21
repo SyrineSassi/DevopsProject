@@ -27,13 +27,7 @@ pipeline{
                		 sh "mvn test " 
             }
         }
-	    stage('Code Quality Check via SonarQube') {
-            steps{
-                
-             		sh "  mvn sonar:sonar -Dsonar.projectKey=cicdback -Dsonar.host.url=http://172.10.0.140:9000 -Dsonar.login=6274f40d3b7e537ee22128230d4682d39ffc9542"
- 
-            }
-        }
+	   
         
 	
 }
