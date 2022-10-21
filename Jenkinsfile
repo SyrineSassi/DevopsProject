@@ -15,6 +15,13 @@ pipeline{
 			userRemoteConfigs: [[url: 'https://github.com/SyrineSassi/DevopsProject.git']]])
             }
 	} 
+	    
+        stage('Cleaning the project') {
+            steps{
+                	sh "mvn -B -DskipTests clean  " 
+            }
+        }
+        
 	
 }
 }
