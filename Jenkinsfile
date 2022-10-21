@@ -21,6 +21,12 @@ pipeline{
                 	sh "mvn -B -DskipTests clean  " 
             }
         }
+	    
+	     stage('Unit Tests') {
+            steps{
+               		 sh "mvn test " 
+            }
+        }
 	    stage('Code Quality Check via SonarQube') {
             steps{
                 
