@@ -10,7 +10,7 @@ pipeline{
     
         stage('Getting project from Git') {
             steps{
-      			checkout([$class: 'GitSCM', branches: [[name: '*/main']], 
+      			checkout([$class: 'GitSCM', branches: [[name: '*/Syrine']], 
 			extensions: [], 
 			userRemoteConfigs: [[url: 'https://github.com/SyrineSassi/DevopsProject.git']]])
             }
