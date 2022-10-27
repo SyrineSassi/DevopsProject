@@ -25,7 +25,7 @@ pipeline{
 	     stage('Code Quality Check via SonarQube') {
             steps{
                 
-             		sh "  mvn sonar:sonar -Dsonar.projectKey=DevopsAchat -Dsonar.host.url=http://192.168.1.17:9000 -Dsonar.login=b8c8819de0deab4f6ccb9d680aa2778c9a13f116"
+             		sh "  mvn sonar:sonar -Dsonar.projectKey=Achat -Dsonar.host.url=http://192.168.1.17:9000 -Dsonar.login=b6502a213b3324978fe77f9a6797afaf7b1f9fe1"
  
             }
         }
