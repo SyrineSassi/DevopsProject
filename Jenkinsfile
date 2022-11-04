@@ -51,8 +51,45 @@ pipeline{
             }
         }
 	    
-	    
+	    stage('Build Docker Image') {
+                              steps {
+                                  script {
+                                    sh 'docker build -t syrinesassi/achat:latest .'
+                                  }
+                              }
+                          }
+
+                          stage('login dockerhub') {
+                                                steps {
+                                              sh 'echo dckr_pat_1CSEtRi3BJ6-aDgYBN2Gvq8TlQc | docker login -u syrinesassi --password-stdin'
+                                                    }
+        		  }
+
+        	                      stage('Push Docker Image') {
+                                                steps {
+                                           sh 'docker push syrinesassi/achat:latest'
+                                                    }
+        		  }
+
+
+        		   stage('Run Spring && MySQL Containers') {
+                                        steps {
+                                            script {
+                                              sh 'docker compose up -d'
+                                            }
+                                        }
+                                    }
+
+
 	    
 }
+
+post {
+        always {
+            cleanWs()
+        }
+    }
+
+
 }
        
