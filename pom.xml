@@ -23,7 +23,7 @@
 		<repository>
 			<id>deploymentRepo</id>
 			<name>releases</name>
-			<url>http://192.168.1.13:8081/repository/maven-releases/ </url>
+			<url>http://192.168.239.239:8081/repository/maven-releases/ </url>
 		</repository>
 	</distributionManagement>
 	<dependencies>
@@ -97,7 +97,7 @@
 				</executions>
 				<configuration>
 					<serverId>nexus</serverId>
-					<nexusUrl>http://192.168.1.13:8081/</nexusUrl>
+					<nexusUrl>http://192.168.239.239:8081/</nexusUrl>
 					<skipStaging>true</skipStaging>
 				</configuration>
 			</plugin>
