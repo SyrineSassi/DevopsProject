@@ -37,20 +37,20 @@ import static org.mockito.Mockito.verify;
     
 
     @Test
-    public void addStock() {
+    public void testaddStock() {
         Mockito.when(stockRepository.save(Mockito.any(Stock.class))).thenReturn(s);
         assertNotNull(stockService.addStock(s));
         //verify(stockRepository).save(s);
     }
 
     @Test
-    public void deleteStock() {
+    public void testdeleteStock() {
         stockService.deleteStock((long)3);
         verify(stockRepository).deleteById((long)3);
     }
 
     @Test
-    public void updateStock() {
+    public void testupdateStock() {
         Mockito.when(stockRepository.save(Mockito.any(Stock.class))).thenReturn(s);
         s.setQte(55);
         assertNotNull(stockService.updateStock(s));
