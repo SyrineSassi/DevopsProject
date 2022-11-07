@@ -26,7 +26,7 @@ pipeline{
                 	sh "mvn -B -DskipTests package "
             }
         }
-	    stage('Unit Tests') {
+	    stage('Mockito') {
             steps{
                		 sh "mvn test "
             }
