@@ -23,7 +23,7 @@ pipeline{
         }
 	    stage('Artifact Construction') {
             steps{
-                	sh "mvn -B -DskipTests package "
+                	sh "mvn package -Dmaven.test.skip=true -P test-coverage"
             }
         }
 	    stage('Mockito') {
