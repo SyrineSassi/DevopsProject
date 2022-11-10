@@ -61,7 +61,7 @@ pipeline{
 
                           stage('login dockerhub') {
                                                 steps {
-                                              sh 'docker login -u syrinesassi --password Syrine1234'
+                                              sh 'echo dckr_pat_3cooqrMsOEE9QuUUuYU0OCQDGj4 | docker login -u syrinesassi --password Syrine1234'
                                                     }
         		  }
 
