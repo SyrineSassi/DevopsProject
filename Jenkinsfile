@@ -35,7 +35,7 @@ pipeline{
 	     stage('Code Quality Check via SonarQube') {
             steps{
                 
-             		sh "  mvn sonar:sonar -Dsonar.projectKey=achat -Dsonar.host.url=http://192.168.1.22:9000 -Dsonar.login=1ab584d36d9d9338ab8e95fa6621e3091e607cf8"
+             		sh "  mvn sonar:sonar -Dsonar.projectKey=achat -Dsonar.host.url=http://192.168.1.14:9000 -Dsonar.login=1ab584d36d9d9338ab8e95fa6621e3091e607cf8"
 		             
  
             }
@@ -45,7 +45,7 @@ pipeline{
             steps {
 
 
-  sh 'mvn clean package deploy:deploy-file -DgroupId=tn.esprit.rh -DartifactId=achat -Dversion=1.0 -DgeneratePom=true -Dpackaging=jar -DrepositoryId=deploymentRepo -Durl=http://192.168.1.22:8081/repository/maven-releases/ -Dfile=target/achat-1.0.jar'
+  sh 'mvn clean package deploy:deploy-file -DgroupId=tn.esprit.rh -DartifactId=achat -Dversion=1.0 -DgeneratePom=true -Dpackaging=jar -DrepositoryId=deploymentRepo -Durl=http://192.168.1.14:8081/repository/maven-releases/ -Dfile=target/achat-1.0.jar'
 
 
             }
@@ -61,7 +61,7 @@ pipeline{
 
                           stage('login dockerhub') {
                                                 steps {
-                                              sh 'docker login -u syrinesassi --password Syrine1234'
+                                              sh 'echo dckr_pat_3cooqrMsOEE9QuUUuYU0OCQDGj4 | docker login -u syrinesassi --password Syrine1234'
                                                     }
         		  }
 
