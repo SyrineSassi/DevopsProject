@@ -31,7 +31,9 @@ import static org.mockito.Mockito.verify;
     Stock s = new Stock((long)1,"testLibelle1",10,150);
     Stock s1 = new Stock((long)2,"testLibelle1",50,100);
     Stock s2 = new Stock((long)3,"testLibelle2",5,80);
-    List<Stock> stock = new ArrayList<Stock>() {{add(s1); add(s2);}};
+    List<Stock> stock = new ArrayList<Stock>();
+    stock.add(s1);
+    stock.add(s2);
 
 
     
