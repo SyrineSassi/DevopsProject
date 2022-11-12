@@ -64,18 +64,28 @@ public class FactureServiceImpl implements IFactureService {
 
 	@Override
 	public List<Facture> getFacturesByFournisseur(Long idFournisseur) {
-		Fournisseur fournisseur = new Fournisseur();
-		fournisseur=fournisseurRepository.findById(idFournisseur).orElse(null);
-		return (List<Facture>) fournisseur.getFactures();
+		try{
+			Fournisseur fournisseur = new Fournisseur();
+			fournisseur=fournisseurRepository.findById(idFournisseur).orElse(null);
+			return (List<Facture>) fournisseur.getFactures();
+		}catch(Exception e){
+			return null;
+		}
+
 	}
 
 	@Override
 	public void assignOperateurToFacture(Long idOperateur, Long idFacture) {
-		Facture facture = factureRepository.findById(idFacture).orElse(null);
-		Operateur operateur = new Operateur();
-		operateur=operateurRepository.findById(idOperateur).orElse(null);
-		operateur.getFactures().add(facture);
-		operateurRepository.save(operateur);
+		try{
+			Facture facture = factureRepository.findById(idFacture).orElse(null);
+			Operateur operateur = new Operateur();
+			operateur=operateurRepository.findById(idOperateur).orElse(null);
+			operateur.getFactures().add(facture);
+			operateurRepository.save(operateur);
+		}catch(Exception e ) {
+		
+		}
+
 
 	}
 
