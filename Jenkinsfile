@@ -54,7 +54,7 @@ pipeline{
 	    stage('Build Docker Image') {
                               steps {
                                   script {
-                                    sh 'docker build -t syrinesassi/achat:latest2 .'
+                                    sh 'docker build -t syrinesassi/achat:latest3 .'
                                   }
                               }
                           }
