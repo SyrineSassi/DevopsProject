@@ -43,6 +43,18 @@ public class Facture implements Serializable {
     @OneToMany(mappedBy="facture")
     @JsonIgnore
     private Set<Reglement> reglements;
+	public void setArchivee(boolean b) {
+		// TODO Auto-generated method stub
+		
+	}
+	public void setMontantFacture(float montantFacture2) {
+		// TODO Auto-generated method stub
+		
+	}
+	public void setMontantRemise(float montantRemise2) {
+		// TODO Auto-generated method stub
+		
+	}
 
 	
 }

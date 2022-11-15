@@ -1,6 +1,7 @@
 package tn.esprit.rh.achat.entities;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -43,6 +44,22 @@ public class Fournisseur implements Serializable {
     private Set<SecteurActivite> secteurActivites;
     @OneToOne(cascade= CascadeType.ALL,fetch=FetchType.EAGER)
     private DetailFournisseur detailFournisseur;
+	public DetailFournisseur getDetailFournisseur() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	public void setDetailFournisseur(DetailFournisseur df) {
+		// TODO Auto-generated method stub
+		
+	}
+	public List<Fournisseur> getSecteurActivites() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	public List<Facture> getFactures() {
+		// TODO Auto-generated method stub
+		return null;
+	}
     
 
 	

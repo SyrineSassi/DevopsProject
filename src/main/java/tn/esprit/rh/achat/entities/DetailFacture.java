@@ -31,5 +31,25 @@ public class DetailFacture implements Serializable {
 	@ManyToOne
 	@JsonIgnore
 	Facture facture;
+	public Object getProduit() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	public float getPourcentageRemise() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	public int getQteCommandee() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	public void setMontantRemise(float montantRemiseDetail) {
+		// TODO Auto-generated method stub
+		
+	}
+	public void setPrixTotalDetail(float prixTotalDetailRemise) {
+		// TODO Auto-generated method stub
+		
+	}
 
 }

@@ -1,6 +1,7 @@
 package tn.esprit.rh.achat.entities;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -34,5 +35,9 @@ public class Operateur implements Serializable{
 	@OneToMany
 	@JsonIgnore
 	private Set<Facture> factures;
+	public List<Facture> getFactures() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }
