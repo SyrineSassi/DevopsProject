@@ -80,9 +80,34 @@ pipeline{
                                         }
                                     }
 
-
 	    
 }
+	
+	 post {
+		success{
+		mail bcc: '', body: '''Dear Syrine Sassi, 
+we are happy to inform you that your pipeline build was successful. 
+Great work ! 
+-Jenkins Team-''', cc: '', from: 'syrine.sassi@esprit.tn', replyTo: '', subject: 'Build Finished - Success', to: 'syrine.sassi@esprit.tn'
+		}
+		
+		failure{
+mail bcc: '', body: '''Dear Syrine Sassi, 
+we are sorry to inform you that your pipeline build failed. 
+Keep working ! 
+-Jenkins Team-''', cc: '', from: 'syrine.sassi@esprit.tn', replyTo: '', subject: 'Build Finished - Failure', to: 'syrine.sassi@esprit.tn'
+		}
+
+        always {
+		emailext attachLog: true, body: '', subject: 'Build finished',from: 'syrine.sassi@esprit.tn' , to: 'syrine.sassi@esprit.tn'
+            cleanWs()
+        }
+    }
+
+	
+	
+	
+	
 
 
 
