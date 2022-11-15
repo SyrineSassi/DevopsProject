@@ -42,11 +42,11 @@ public class SpringBootWithUnitTestApplicationTests {
         assertEquals(p1.getNom(), savedOperateur1.getNom());
     }
 
-    @Test
-    @Order(2)
-    void deleteOperateur() {
-        ps.deleteOperateur(1L);
-    }
+  //  @Test
+    //@Order(2)
+    //void deleteOperateur() {
+      //  ps.deleteOperateur(1L);
+   // }
 
 
 }
