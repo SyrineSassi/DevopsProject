@@ -31,8 +31,10 @@ public class SpringBootWithUnitTestApplicationTests {
 
 
     @Test
+    @Order(0) 
     void addOperateur() {
         Operateur p1 = new Operateur();
+        p1.setIdOperateur(1L);
         p1.setPrenom("Operateur test");
         p1.setNom("test");
         p1.setPassword("mmmm");
@@ -41,8 +43,9 @@ public class SpringBootWithUnitTestApplicationTests {
     }
 
     @Test
+    @Order(2)
     void deleteOperateur() {
-        ps.deleteOperateur((long) 6);
+        ps.deleteOperateur(1L);
     }
 
 
