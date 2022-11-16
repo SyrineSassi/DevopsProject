@@ -56,7 +56,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
-	<artifactId>junit-jupiter</artifactId>
+			<artifactId>junit-jupiter</artifactId>
 			<version>5.9.1</version>
 		</dependency>
 		<dependency>
@@ -67,9 +67,6 @@
 			<groupId>org.jacoco</groupId>
 			<artifactId>jacoco-maven-plugin</artifactId>
 			<version>0.8.6</version>
-			<artifactId>junit-jupiter-api</artifactId>
-			<version>5.7.2</version>
-
 		</dependency>
 	</dependencies>
 	<build>
