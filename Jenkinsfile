@@ -97,6 +97,7 @@ pipeline{
                 -Jenkins Team-''', cc: '', from: 'syrine.sassi@esprit.tn', replyTo: '', subject: 'Build Finished - Failure', to: 'syrine.sassi@esprit.tn'
 		}
 	        }
+	}
 
 
 	    
