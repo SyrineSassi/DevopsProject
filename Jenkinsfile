@@ -22,7 +22,7 @@ pipeline {
                  sh "mvn compile"
              }
          } 
-         stage ('Mockito/Junit') {
+      /*   stage ('Mockito/Junit') {
              steps {
             
             sh "mvn test"
@@ -40,7 +40,7 @@ pipeline {
             steps {
                 sh 'mvn deploy -DskipTests'
       }
-    }
+    }  */
           
           stage ('SonarQube tests') {
             steps {
@@ -49,7 +49,7 @@ pipeline {
       }
     }
           }
-         stage("Building Docker Image") {
+    /*     stage("Building Docker Image") {
                 steps{
                    // sh 'sudo chmod 666 /var/run/docker.sock'
                     sh 'docker build -t liliaabdeljelil/imagedevops .'
@@ -73,7 +73,7 @@ pipeline {
                     //sh 'docker-compose up -d'
                     sh 'docker-compose up -d --force-recreate --build'
                 }
-        }
+        }*/
           
      }
 
