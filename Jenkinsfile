@@ -79,11 +79,8 @@ pipeline{
                                             }
                                         }
                                     }
-
 	    
-}
-	
-	 post {
+	     post {
 		success{
 		mail bcc: '', body: '''Dear Syrine Sassi, 
 we are happy to inform you that your pipeline build was successful. 
@@ -104,12 +101,7 @@ Keep working !
         }
     }
 
-	
-	
-	
-	
-
-
-
+	    
+}
 }
 
