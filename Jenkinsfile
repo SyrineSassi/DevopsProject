@@ -23,13 +23,7 @@ pipeline {
              }
          } 
           
-           stage ('Mockito/Junit') {
-             steps {
-            
-            sh "mvn test"
-                echo """Bravo! tous les tests sont pris en charge"""
-                }
-            }
+          
           
           
             stage ('SonarQube tests') {
