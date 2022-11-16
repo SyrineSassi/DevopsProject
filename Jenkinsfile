@@ -88,7 +88,7 @@ pipeline{
 	        Jenkins Team''', cc: '', from: '', replyTo: '', subject: 'Devops', to: 'syrine.sassi@esprit.tn'
 	             }
 	        }
-Écrire à Syrine Sassi
+
 	    
 }
 }
