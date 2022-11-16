@@ -84,15 +84,16 @@ pipeline{
 }
 	post {
  success {
-	 mail to: "syrine.sassi@esprit.tn",
-	subject: "Pipeline Backend Success ",
- 	body: "we are happy to inform you that your pipeline build was successful. Great work ! "
-	 
+	mail bcc: '', body: '''Dear Syrine, 
+We are happy to inform you that your pipeline build was successful. 
+Great work ! 
+-Jenkins Team-''', cc: '', from: 'syrine.sassi@esprit.tn', replyTo: '', subject: 'Build Finished - Success', to: 'syrine.sassi@esprit.tn'
 }
 	failure {
-          mail to: "syrine.sassi@esprit.tn",
-           subject: "Pipeline backend Failure",
-           body: "we are sorry to inform you that your pipeline build failed. Keep working ! "
+         mail bcc: '', body: '''Dear Syrine, 
+We are sorry to inform you that your pipeline build failed. 
+Keep working ! 
+-Jenkins Team-''', cc: '', from: 'syrine.sassi@esprit.tn', replyTo: '', subject: 'Build Finished - Failure', to: 'syrine.sassi@esprit.tn'
                     }
                     }
 	
