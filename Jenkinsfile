@@ -80,14 +80,7 @@ pipeline{
                                         }
                                     }
 	    
-	   stage('Sending Email'){
-	    steps {
-	        mail bcc: '', body: '''Dear Syrine Sassi,
-	       we are happy to inform you that your pipeline build was successful. 
-               Great work ! 
-	        Jenkins Team''', cc: '', from: '', replyTo: '', subject: 'Devops', to: 'syrine.sassi@esprit.tn'
-	             }
-	        }
+	 
 
 	    
 }
