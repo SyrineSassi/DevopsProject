@@ -45,6 +45,33 @@ pipeline {
       }
     }  
           
+         stage("Building Docker Image") {
+                steps{
+                   // sh 'sudo chmod 666 /var/run/docker.sock'
+                    sh 'docker build -t siwarnl/imagedevops .'
+                }
+        }
+          
+          stage("Login to DockerHub") {
+                steps{
+                   // sh 'sudo chmod 666 /var/run/docker.sock'
+                    sh 'echo dckr_pat_SqHvpKd6FgmKg5tIaop7yh8o3pE | docker login -u siwarnl -p Siwar123@'
+                }
+        }
+           stage("Push to DockerHub") {
+                steps{             
+                    sh 'docker push siwarnl/imagedevops'
+                }
+        }
+           stage("Docker-compose") {
+                steps{
+                    //sh 'docker-compose up -d'
+                    sh 'docker-compose up -d --force-recreate --build'
+                }
+        }
+          
+          
+          
           
   
           
