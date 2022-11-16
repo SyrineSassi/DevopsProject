@@ -35,7 +35,7 @@ pipeline{
 	     stage('Code Quality Check via SonarQube') {
             steps{
                 
-             		sh "  mvn sonar:sonar -Dsonar.projectKey=achat -Dsonar.host.url=http://192.168.1.19:9000 -Dsonar.login=1ab584d36d9d9338ab8e95fa6621e3091e607cf8"
+             		sh "  mvn sonar:sonar -Dsonar.projectKey=achat -Dsonar.host.url=http://192.168.1.14:9000 -Dsonar.login=1ab584d36d9d9338ab8e95fa6621e3091e607cf8"
 		             
  
             }
@@ -45,7 +45,7 @@ pipeline{
             steps {
 
 
-  sh 'mvn clean package deploy:deploy-file -DgroupId=tn.esprit.rh -DartifactId=achat -Dversion=1.0 -DgeneratePom=true -Dpackaging=jar -DrepositoryId=deploymentRepo -Durl=http://192.168.1.19:8081/repository/maven-releases/ -Dfile=target/achat-1.0.jar'
+  sh 'mvn clean package deploy:deploy-file -DgroupId=tn.esprit.rh -DartifactId=achat -Dversion=1.0 -DgeneratePom=true -Dpackaging=jar -DrepositoryId=deploymentRepo -Durl=http://192.168.1.14:8081/repository/maven-releases/ -Dfile=target/achat-1.0.jar'
 
 
             }
@@ -84,11 +84,18 @@ pipeline{
 	    
 	stage('Sending email'){
 	    steps {
-	        mail bcc: '', body: '''Dear Syrine Sassi,
-	        we are happy to inform you that your pipeline build was successful. 
+	       success{
+		mail bcc: '', body: '''Dear Syrine , 
+                we are happy to inform you that your pipeline build was successful. 
                 Great work ! 
-	        -Jenkins Team-''', cc: '', from: '', replyTo: '', subject: 'Devops', to: 'syrine.sassi@esprit.tn'
-	             }
+               -Jenkins Team-''', cc: '', from: 'syrine.sassi@esprit.tn', replyTo: '', subject: 'Build Finished - Success', to: 'syrine.sassi@esprit.tn'
+		}
+		    failure{
+                mail bcc: '', body: '''Dear Syrine , 
+                we are sorry to inform you that your pipeline build failed. 
+                Keep working ! 
+                -Jenkins Team-''', cc: '', from: 'syrine.sassi@esprit.tn', replyTo: '', subject: 'Build Finished - Failure', to: 'syrine.sassi@esprit.tn'
+		}
 	        }
 
 
