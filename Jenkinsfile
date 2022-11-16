@@ -29,6 +29,13 @@ pipeline {
       }
     }
           
+           stage ('Nexus') {
+            steps {
+               sh 'mvn clean package deploy:deploy-file -DgroupId=tn.esprit.rh -DartifactId=achat -Dversion=1.0 -DgeneratePom=true -Dpackaging=jar -DrepositoryId=deploymentRepo -Durl=http://172.20.2.128:8081/repository/maven-releases/ -Dfile=target/achat-1.0.jar'
+
+      }
+    }  
+          
   
           
      }
