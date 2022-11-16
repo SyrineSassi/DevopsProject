@@ -36,11 +36,11 @@ pipeline {
                      sh 'mvn test'
                 }
           } 
-       stage ('Nexus') {
+      */ stage ('Nexus') {
             steps {
                 sh 'mvn deploy -DskipTests'
       }
-    }  */
+    }  
           
           stage ('SonarQube tests') {
             steps {
