@@ -23,6 +23,15 @@ pipeline {
              }
          } 
           
+           stage ('Mockito/Junit') {
+             steps {
+            
+            sh "mvn test"
+                echo """Bravo! tous les tests sont pris en charge"""
+                }
+            }
+          
+          
             stage ('SonarQube tests') {
             steps {
               sh' mvn sonar:sonar -Dsonar.projectKey=DevOps -Dsonar.host.url=http://172.20.2.128:9000 -Dsonar.login=5c35462ae955048ee097bccb7ee16b5e1e71464c'
@@ -35,6 +44,7 @@ pipeline {
 
       }
     }  
+          
           
   
           
