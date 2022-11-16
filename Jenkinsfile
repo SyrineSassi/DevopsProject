@@ -11,12 +11,12 @@ pipeline {
           }
         }
           
-          stage('Creation livrable'){ 
+       /*   stage('Creation livrable'){ 
              steps{ 
                  sh "mvn clean package"
              }
          }
-          
+          */
          stage('Compilation'){ 
              steps{ 
                  sh "mvn compile"
